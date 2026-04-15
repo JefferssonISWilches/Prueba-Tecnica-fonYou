@@ -1,0 +1,33 @@
+1) Crear personaje
+curl -X POST http://localhost:8080/personajes \
+-H "Content-Type: application/json" \
+-d '{
+  "nombre": "Luffy",
+  "identificacion": "001",
+  "imagen": "https://...",
+  "rol": "Capitan",
+  "descripcion": "Pirata principal",
+  "fechaCreacion": "2026-04-15T10:00:00"
+}'
+
+2)  Obtener personajes
+curl http://localhost:8080/personajes
+
+3) Ordenar por nombre y fecha
+curl http://localhost:8080/personajes?orden=nombre
+curl http://localhost:8080/personajes?orden=fecha
+
+4) Actualizar
+curl -X PUT http://localhost:8080/personajes/1 \
+-H "Content-Type: application/json" \
+-d '{
+  "nombre": "Zoro",
+  "identificacion": "002",
+  "imagen": "https://...",
+  "rol": "Espadachin",
+  "descripcion": "Mano derecha",
+  "fechaCreacion": "2026-04-15T10:00:00"
+}'
+
+5) Eliminar personaje
+curl -X DELETE http://localhost:8080/personajes/1
